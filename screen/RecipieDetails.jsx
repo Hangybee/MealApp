@@ -40,10 +40,10 @@ const RecipieDetails = ({ route }) => {
         return index
     }
 
-    const getYouTubeVideoId = (url) =>{
+    const getYouTubeVideoId = (url) => {
         const regex = /[?&]v=([^&]+)/;
         const match = url.match(regex)
-        if(match && match[1]){
+        if (match && match[1]) {
             return match[1]
         }
         return null
@@ -118,23 +118,21 @@ const RecipieDetails = ({ route }) => {
                                 {/* instructions */}
                                 <View className="mt-2">
                                     <Text className="text-neutral-700 text-lg font-bold mb-2">Instructions</Text>
-                                     <Text className="text-neutral-700 text-sm">{detail && detail["strInstructions"]}</Text>
+                                    <Text className="text-neutral-700 text-sm">{detail && detail["strInstructions"]}</Text>
                                 </View>
-                                    {/* recipie video */}
-                                    {
-                                        detail && detail["strYoutube"] && (
-                                            <View className="mt-3">
-                                                <Text className="font-bold flex-1 my-2 text-lg text-neutral-600">Recipie Video</Text>
-                                                <YoutubeIframe
-                                                    videoId={getYouTubeVideoId(detail?.strYoutube)}
-                                                    // videoId='ONX74yP6JnI'
-                                                    height={240}
-                                                    
-                                                />
-                                            </View>
-                                        )
-                                        
-                                    }
+                                {/* recipie video */}
+                                {
+                                    detail && detail["strYoutube"] && (
+                                        <View className="mt-3">
+                                            <Text className="font-bold flex-1 my-2 text-lg text-neutral-600">Recipie Video</Text>
+                                            <YoutubeIframe
+                                                videoId={getYouTubeVideoId(detail?.strYoutube)}
+                                                // videoId='ONX74yP6JnI'
+                                                height={240}
+                                            />
+                                        </View>
+                                    )
+                                }
                             </View>
                         </ScrollView>
                     )
