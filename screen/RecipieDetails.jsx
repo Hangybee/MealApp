@@ -32,9 +32,7 @@ const RecipieDetails = ({ route }) => {
         const index = []
         for (let i = 0; i < 20; i++) {
             if (detail["strIngredient" + i]) {
-                // console.log(detail["strIngredient"+i])
                 index.push(i)
-                // console.log('wwweeeee',i)
             }
         }
         return index
